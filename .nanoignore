@@ -1,0 +1,6 @@
+#Ignore these resources when making images
+
+.git
+.DS_store
+/_build/test/
+/lib/ruby/
