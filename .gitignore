@@ -10,6 +10,7 @@ erl_crash.dump
 
 # Static artifacts
 /node_modules
+/assets/node_modules
 .tern-port
 
 # Since we are building assets from web/static,

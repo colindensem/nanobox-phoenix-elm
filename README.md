@@ -9,13 +9,16 @@ You need the Nanobox cli. You do not need a paid account or any deployable cloud
 ## Getting started
 
 Clone the repository.
-From the project root, run `nanobox dns add local phoenix-elm.dev`
-From the project root, run `nanobox run`
-Wait while nanobox creates the containers.
-Eventually you'll be in the nanobox container at `/app`
+
+From the project root, run `nanobox dns add local nanobox-phoenix-elm.dev`*
+
+From the project root, run `nanobox run` & wait while Nanobox creates the containers. Eventually you'll be in the Nanobox container at `/app`
+
 Check it out:
 * `elixir -v`
 * `mix list`
+
+\*  If you use a different local DNS entry, be sure to read & modify the `assets/webpack.config.js` file.
 
 Running phoenix is easy.
 * `cd /app && mix ecto.create` - Sets up the database.
@@ -25,8 +28,14 @@ Running phoenix is easy.
 * Open a browser to http://phoenix-elm.dev:4000
 
 
+## How we got here
 
+Installing the JS/webpack/elm stack from within the nanobox runnign container for the application do the following:
 
+* `cd assets`
+* `yarn add babel-core babel-loader babel-preset-es2015 extract-text-webpack-plugin css-loader node-sass sass-loader style-loader webpack elm-webpack-loader --dev`
+* `rm brunch-config.js`
+* Add `webpack.config.js`
 
 ## Learn more
 
