@@ -1,15 +1,32 @@
-# App
+# A Phoenix Elm App with Nanobox
 
-To start your Phoenix server:
+*A hip hipster way?*
 
-  * Install dependencies with `mix deps.get`
-  * Create and migrate your database with `mix ecto.create && mix ecto.migrate`
-  * Install Node.js dependencies with `cd assets && npm install`
-  * Start Phoenix endpoint with `mix phx.server`
+We want to run [Phoenix Framework (1.3)](http://phoenixframework.org/) and [elm (0.18)](http://elm-lang.org/) out of a single application within a docker environment. We'll use [Nanobox](https://nanobox.io) to make life extremely simple.
 
-Now you can visit [`localhost:4000`](http://localhost:4000) from your browser.
+You need the Nanobox cli. You do not need a paid account or any deployable cloud providers initially.
 
-Ready to run in production? Please [check our deployment guides](http://www.phoenixframework.org/docs/deployment).
+## Getting started
+
+Clone the repository.
+From the project root, run `nanobox dns add local phoenix-elm.dev`
+From the project root, run `nanobox run`
+Wait while nanobox creates the containers.
+Eventually you'll be in the nanobox container at `/app`
+Check it out:
+* `elixir -v`
+* `mix list`
+
+Running phoenix is easy.
+* `cd /app && mix ecto.create` - Sets up the database.
+* `cd /app/assets && yarn` - Installs the JS dependencies.
+* `cd /app && mix deps.get` - Installs the elixir application dependencies.
+* `cd /app && mix phx.server` - Starts the Phoenix endpoint.
+* Open a browser to http://phoenix-elm.dev:4000
+
+
+
+
 
 ## Learn more
 
